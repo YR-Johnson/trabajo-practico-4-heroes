@@ -3,13 +3,17 @@ const path = require('path')
 const app = express();
 const port = 3030;
 
+app.use(express.static('public'));
+
 // RUTAS
 
-//app.get('/',(req,res)=>res.send('Welcome a HOME')); //home
-app.get('/',(req,res)=>res.sendFile(path.join(__dirname,'views','home.html'))); //home
-app.get('/',(req,res)=>res.sendFile(path.join(__dirname,'views','detalle.html'))); //detalle
-app.get('/',(req,res)=>res.sendFile(path.join(__dirname,'views','registro.html'))); //registro
-app.get('/',(req,res)=>res.sendFile(path.join(__dirname,'views','login.html'))); //login
-app.get('/',(req,res)=>res.sendFile(path.join(__dirname,'views','carrito.html'))); //carrito
+app.get('/',(req,res)=>res.sendFile(path.join(__dirname,'views','home.html')));
+app.get('/babbage',(req,res)=>res.sendFile(path.join(__dirname,'views','babbage.html')));
+app.get('/berners-lee',(req,res)=>res.sendFile(path.join(__dirname,'views','berners-lee.html')));
+app.get('/clarke',(req,res)=>res.sendFile(path.join(__dirname,'views','clarke.html')));
+app.get('/hamilton',(req,res)=>res.sendFile(path.join(__dirname,'views','hamilton.html')));
+app.get('/hopper',(req,res)=>res.sendFile(path.join(__dirname,'views','hopper.html')));
+app.get('/lovelace',(req,res)=>res.sendFile(path.join(__dirname,'views','lovelace.html')));
+app.get('/turing',(req,res)=>res.sendFile(path.join(__dirname,'views','turing.html')));
 
 app.listen(port,()=>console.log(`Servidor corriendo en http://localhost:${port}`));
